@@ -1,194 +1,55 @@
-# 焊机参数机器学习项目 .gitignore
+# 焊机参数机器学习项目 - 简化版 .gitignore
 
 # ============================================
-# Python
+# Python 相关
 # ============================================
 
-# Byte-compiled / optimized / DLL files
+# Python 缓存文件
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-Pipfile.lock
-
-# poetry
-poetry.lock
-
-# pdm
-.pdm.toml
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
+# 虚拟环境
+.env/
+.venv/
 venv/
-ENV/
-env.bak/
-venv.bak/
+env/
 
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
+# 包构建文件
+build/
+dist/
+*.egg-info/
 
 # ============================================
 # 项目特定文件
 # ============================================
 
-# 模型文件
+# 模型文件（不提交训练好的模型）
 saved_models/*
 !saved_models/.gitkeep
 
-# 评估结果
+# 评估结果（不提交评估结果）
 results/*
 !results/.gitkeep
 
-# 日志文件
+# 日志文件（不提交日志）
 logs/*
 !logs/.gitkeep
 
-# 临时文件
-*.tmp
-*.temp
-
-# 缓存文件
-.cache
-
-# 数据集（如果很大，建议不提交）
-dataset/*.csv
-!dataset/.gitkeep
-
-# 大型数据文件
+# 大型数据文件（不提交数据集）
 *.h5
 *.hdf5
 *.pkl
 *.pickle
 *.joblib
 
-# 配置文件（包含敏感信息）
-configs/*.local.py
-configs/*.secret.py
+# 数据集（如果很大，建议不提交）
+# dataset/*.csv
+# !dataset/.gitkeep
 
-# 个人设置
-*.local
-*.personal
-
-# IDE 文件
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# ============================================
+# 系统文件
+# ============================================
 
 # 操作系统文件
 .DS_Store
@@ -199,90 +60,50 @@ configs/*.secret.py
 ehthumbs.db
 Thumbs.db
 
-# Windows 缩略图缓存文件
+# Windows 文件
 Desktop.ini
-
-# 回收站文件
 $RECYCLE.BIN/
 
-# 临时系统文件
-*.stackdump
-
-# 压缩文件
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# 文档文件
-*.doc
-*.docx
-*.pdf
-*.ppt
-*.pptx
-*.xls
-*.xlsx
+# 临时文件
+*.tmp
+*.temp
+*.log
 
 # ============================================
-# 机器学习/数据科学
+# IDE 文件
 # ============================================
 
-# Jupyter
-.ipynb_checkpoints
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# PyTorch
-*.pth
+# PyCharm/IntelliJ
+.idea/
+*.iml
 
-# TensorFlow
-*.ckpt
-*.meta
-*.index
-*.data*
-
-# Keras
-*.h5
-*.keras
+# 编辑器临时文件
+*~
+*.swp
+*.swo
 
 # ============================================
 # 其他
 # ============================================
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
 
 # 备份文件
 *.bak
 *.backup
 *.old
 
-# 临时文件
-*.tmp
-*.temp
-
-# 日志文件
-*.log
-*.log.*
-
-# 性能分析文件
-*.prof
-*.profile
-
-# 测试输出
-test_output/
-
-# 虚拟环境（应该使用.gitkeep占位）
-.env/
-.venv/
-venv/
-env/
-
-# ============================================
-# 建议保留的文件（使用.gitkeep占位）
-# ============================================
-
-# 创建空文件作为占位符
-# saved_models/.gitkeep
-# results/.gitkeep
-# logs/.gitkeep
-# dataset/.gitkeep
+# 个人配置文件
+*.local
+*.personal
+configs/*.secret.py

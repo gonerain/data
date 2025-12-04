@@ -1,0 +1,39 @@
+# 焊机参数机器学习项目依赖
+
+# 核心依赖
+pandas>=1.5.0
+numpy>=1.23.0
+scikit-learn>=1.2.0
+joblib>=1.2.0
+
+# 可选依赖（用于其他模型）
+# xgboost>=1.7.0  # 如果需要使用XGBoost模型
+
+# 开发依赖
+# matplotlib>=3.6.0  # 可视化
+# seaborn>=0.12.0   # 统计可视化
+# jupyter>=1.0.0    # Jupyter Notebook
+# ipython>=8.0.0    # 交互式Python
+
+# 工具
+# tqdm>=4.64.0      # 进度条
+# pyyaml>=6.0       # YAML配置文件
+
+# 测试
+# pytest>=7.0.0     # 测试框架
+# pytest-cov>=4.0.0 # 测试覆盖率
+
+# 代码质量
+# black>=22.0.0     # 代码格式化
+# flake8>=6.0.0     # 代码检查
+# mypy>=1.0.0       # 类型检查
+
+# 安装命令:
+# pip install -r requirements.txt
+
+# 最小安装（仅核心功能）:
+# pip install pandas numpy scikit-learn joblib
+
+# 完整安装（包含可选依赖）:
+# pip install -r requirements.txt
+# pip install xgboost matplotlib seaborn jupyter
