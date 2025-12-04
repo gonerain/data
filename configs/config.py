@@ -53,8 +53,8 @@ class ModelConfig:
 @dataclass
 class RandomForestConfig:
     """随机森林配置"""
-    n_estimators: int = 100
-    max_depth: int = 10
+    n_estimators: int = 200
+    max_depth: int = 15
     min_samples_split: int = 5
     min_samples_leaf: int = 2
     random_state: int = 42
