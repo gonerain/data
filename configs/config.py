@@ -41,7 +41,7 @@ class DataConfig:
 class ModelConfig:
     """模型配置"""
     # 模型类型
-    model_type: str = 'random_forest'  # 可选: 'random_forest', 'xgboost', 'gradient_boosting'
+    model_type: str = 'random_forest'  # 可选: 'random_forest', 'xgboost', 'gradient_boosting', 'linear_regression'
     
     # 模型保存路径
     model_save_path: str = 'saved_models'
@@ -81,6 +81,14 @@ class GradientBoostingConfig:
     random_state: int = 42
 
 @dataclass
+class LinearRegressionConfig:
+    """线性回归配置"""
+    fit_intercept: bool = True
+    copy_X: bool = True
+    n_jobs: int = -1
+
+
+@dataclass
 class TrainingConfig:
     """训练配置"""
     # 基础配置
@@ -96,6 +104,7 @@ class TrainingConfig:
     random_forest: RandomForestConfig = field(default_factory=RandomForestConfig)
     xgboost: XGBoostConfig = field(default_factory=XGBoostConfig)
     gradient_boosting: GradientBoostingConfig = field(default_factory=GradientBoostingConfig)
+    linear_regression: LinearRegressionConfig = field(default_factory=LinearRegressionConfig)
     
     # 训练配置
     save_model: bool = True
@@ -137,4 +146,10 @@ def get_gradient_boosting_config() -> TrainingConfig:
     """获取梯度提升配置"""
     config = TrainingConfig()
     config.model.model_type = 'gradient_boosting'
+    return config
+
+def get_linear_regression_config() -> TrainingConfig:
+    """获取线性回归配置"""
+    config = TrainingConfig()
+    config.model.model_type = 'linear_regression'
     return config

@@ -8,6 +8,8 @@ import os
 import subprocess
 from pathlib import Path
 
+import models.model_factory as model_factory
+
 # 添加当前目录到Python路径
 sys.path.append('.')
 
@@ -58,7 +60,9 @@ while True:
         elif train_choice == '2':
             print("\n自定义训练:")
             team = input("班组 (甲/乙/丙/丁): ").strip() or "甲"
-            model = input("模型类型 (random_forest/xgboost/gradient_boosting): ").strip() or "random_forest"
+            # model = input("模型类型 (random_forest/xgboost/gradient_boosting): ").strip() or "random_forest"
+            model_list = model_factory.ModelFactory.get_available_models()
+            model = input(f"模型类型 {model_list}: ").strip() or "random_forest"
             samples = input("最大样本数 (0表示全部): ").strip() or "2000"
             
             cmd = [sys.executable, "scripts/train.py", "--team", team, "--model", model, "--max_samples", samples]

@@ -7,8 +7,15 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.multioutput import MultiOutputRegressor
 
 from models.base_model import BaseModel
+from models.model_factory import ModelFactory
 
 
+@ModelFactory.register(
+    model_type='random_forest',
+    config_section='random_forest',
+    description='随机森林回归 - 集成学习，抗过拟合能力强',
+    dependencies=['sklearn']
+)
 class RandomForestModel(BaseModel):
     """随机森林模型"""
     
